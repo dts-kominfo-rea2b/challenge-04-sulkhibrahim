@@ -8,17 +8,22 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+const createDate = (a,b)=>{
+  const m=a.map(c=>new Date(c).getTime()/1000)
+  return b==undefined ? m.sort().join("-") : `${m[b]}`
+  
+};
 
 // ! JANGAN DIMODIFIKASI
 (() => {
   // IIFE
 
   // '1546387200-1580662800-1614841200-1617573600-1651802400' (dalam string)
-  console.log(createDate?.(dates));
+  console.log( createDate(dates) );
+  console.log( createDate(dates,2) );
 
   // '1614841200' (dalam string)
-  console.log(createDate?.(dates, 2));
+  console.log(createDate?.(dates, 3));
 })();
 
 module.exports = {
